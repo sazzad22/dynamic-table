@@ -1,5 +1,9 @@
+body{
+    padding: 50px;
+}
 table {
     border-collapse: collapse;
+    margin-top: 1rem;
     width: 50% !important;
   }
   
@@ -8,6 +12,7 @@ table {
     text-align: center;
     padding: 10px;
   }
+ 
   
   button {
     background-color: #3399ff;

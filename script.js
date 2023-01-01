@@ -1,7 +1,7 @@
 const addColumnButton = document.getElementById("addColumn");
 const addRowButton = document.getElementById("addRow");
 const columnNameInput = document.getElementById("columnName");
-const table = document.getElementById("myTable");
+const table = document.getElementById("unique-table");
 
 addColumnButton.addEventListener("click", function () {
   // Get the column name from the input field
