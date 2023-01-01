@@ -4,25 +4,25 @@ const columnNameInput = document.getElementById("columnName");
 const table = document.getElementById("unique-table");
 
 addColumnButton.addEventListener("click", function () {
-  // Get the column name from the input field
+    //the column name input value stored in coloumnName
   const columnName = columnNameInput.value;
 
-  // Check if the column name is not empty
+  // if the column name is not empty take the input text and add column with delete column button
   if (columnName) {
-    // Add a new header cell to the table
+    // on the top row Adding a new header cell to the table 
     const headerRow = table.rows[0];
     const newHeaderCell = headerRow.insertCell(-1);
     newHeaderCell.innerHTML =
       columnName +
       ' <button class="btn btn-sm   btn-outline-danger delete-col">X</button>';
 
-    // Add a new cell to each row
+    // Adding a new cell to each row
     for (let i = 1; i < table.rows.length; i++) {
       const newCell = table.rows[i].insertCell(-1);
       newCell.innerHTML = '<input type="text">';
     }
 
-    // Add an event listener to the delete button in the new header cell
+    // An event listener to the delete button in the new header cell
     const deleteButton = newHeaderCell.querySelector(".delete-col");
     deleteButton.addEventListener("click", function () {
       // Delete the column
@@ -34,21 +34,21 @@ addColumnButton.addEventListener("click", function () {
 });
 
 addRowButton.addEventListener("click", function () {
-  // Add a new row to the table
+  // Adding a new row to the table
   const newRow = table.insertRow(-1);
 
-  // Add a new cell to the row
+  // Adding a new cell to the row
   const newCell = newRow.insertCell(-1);
   newCell.innerHTML =
-    '<button class="save">Save</button><button class="delete">Delete</button>';
+    '<button class="save btn btn-success">Save</button><button class="delete btn btn-danger">Delete</button>';
 
-  // Add an input field to each cell in the new row
+  // Adding an input field to each cell in the new row
   for (let i = 1; i < table.rows[0].cells.length; i++) {
     const newCell = newRow.insertCell(-1);
     newCell.innerHTML = '<input type="text">';
   }
 
-  // Add event listeners to the save and delete buttons in the new row
+  // Adding event listeners to the save and delete buttons in the new row
   const saveButton = newRow.cells[0].querySelector(".save");
   const deleteButton = newRow.cells[0].querySelector(".delete");
 
@@ -64,7 +64,7 @@ addRowButton.addEventListener("click", function () {
     saveButton.classList.remove("save");
     saveButton.classList.add("edit");
 
-    // Add an event listener to the edit button
+    // Adding an event listener to the edit button
     saveButton.addEventListener("click", function () {
       // Replace the cell contents with input fields
       for (let i = 1; i < newRow.cells.length; i++) {
@@ -77,7 +77,7 @@ addRowButton.addEventListener("click", function () {
       saveButton.classList.remove("edit");
       saveButton.classList.add("save");
 
-      // Add an event listener to the save button
+      // Adding an event listener to the save button
       saveButton.addEventListener("click", function () {
         // Save the data in the input fields
         for (let i = 1; i < newRow.cells.length; i++) {
@@ -99,7 +99,7 @@ addRowButton.addEventListener("click", function () {
   });
 });
 
-// Add event listeners to the delete buttons in the header row
+// Adding event listeners to the delete buttons in the header row
 const headerRow = table.rows[0];
 for (let i = 0; i < headerRow.cells.length; i++) {
   const deleteButton = headerRow.cells[i].querySelector(".delete");

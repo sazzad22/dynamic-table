@@ -4,7 +4,7 @@ body{
 table {
     border-collapse: collapse;
     margin-top: 1rem;
-    width: 50% !important;
+    width: 50% ;
   }
   
   td, th {
